@@ -1,5 +1,4 @@
 package org.poly.entities;
-
 import java.io.Serializable;
 
 import javax.persistence.Entity;
@@ -12,21 +11,14 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity @Data @AllArgsConstructor @NoArgsConstructor
+public class Matiere implements Serializable {
 
-public class Etudiant implements Serializable {
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long Id;
-	private String matricule;
-	private String nom ;
-	private String prenom ;
-	private String dateDeNaissance ;
-	private String lieuDeNaissance ;
-	private String adresseActuelle ;
-	private String AdresseOrigine ;
-	private String email ;
-	private String sexe ;
-	private Long cin; 
-	private String photo ;
-	private String numTel ; 
-	
+	private Long Id ;
+	private String codeMatiere ;
+	private String description ;
+	private int coef ;
+	private int nbreHeureCours;
+	private int nbreHeureTd ;
+	private int nbreHeureTp ;
 }
