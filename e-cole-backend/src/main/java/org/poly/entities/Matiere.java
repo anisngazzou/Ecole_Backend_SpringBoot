@@ -1,10 +1,13 @@
 package org.poly.entities;
 import java.io.Serializable;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -21,4 +24,10 @@ public class Matiere implements Serializable {
 	private int nbreHeureCours;
 	private int nbreHeureTd ;
 	private int nbreHeureTp ;
+	
+	@OneToMany(mappedBy = "matiere")
+	private List<AffectationEnseigMatiere> affectationsEnseignant;
+	
+	@ManyToOne
+	private Section section;
 }
