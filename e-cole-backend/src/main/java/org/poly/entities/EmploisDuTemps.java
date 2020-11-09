@@ -5,6 +5,7 @@ import java.io.Serializable;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
+import javax.persistence.ManyToOne;
 
 import lombok.AllArgsConstructor;
 
@@ -18,4 +19,7 @@ public class EmploisDuTemps implements Serializable {
 	private String jour ;
 	private String heureDebut ;
 	private String heureFin ;
+	@ManyToOne
+    private Groupe groupe ;
+	
 }

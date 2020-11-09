@@ -33,5 +33,10 @@ public class Etudiant extends User implements Serializable  {
 	
 	@OneToMany(mappedBy = "etudiant")
 	private List<AffectaionEtudGroupe> affectations;
+	@OneToMany(mappedBy = "etudiant") 
+    private List<Note> note; 
+	@OneToMany(mappedBy = "etudiant") 
+	private List<AbsenceEtudiant> absenceetudiant; 
+	
 	
 }

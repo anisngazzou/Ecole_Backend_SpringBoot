@@ -5,6 +5,7 @@ import java.io.Serializable;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
+import javax.persistence.ManyToOne;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -18,4 +19,8 @@ public class Note implements Serializable {
 	private int noteTp ;
 	private int noteTd;
 	private int noteExamen ;
+	@ManyToOne 
+    private Etudiant etudiant ; 
+	@ManyToOne 
+    private Matiere matiere ; 
 }

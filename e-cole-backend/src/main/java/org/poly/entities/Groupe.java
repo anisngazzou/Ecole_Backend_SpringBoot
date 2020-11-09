@@ -30,6 +30,11 @@ public class Groupe {
 	
 	@ManyToOne
 	private Section section ;
+	
+	@OneToMany(mappedBy = "groupe")
+	private List<EmploisDuTemps> emploisdutemps;
+	
+	
 	}
 
 

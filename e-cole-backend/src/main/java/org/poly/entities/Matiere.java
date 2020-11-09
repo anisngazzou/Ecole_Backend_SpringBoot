@@ -30,4 +30,8 @@ public class Matiere implements Serializable {
 	
 	@ManyToOne
 	private Section section;
+	@OneToMany(mappedBy = "matiere") 
+    private List<Note> note; 
+	@OneToMany(mappedBy = "matiere") 
+    private List<AbsenceEtudiant> absenceetudiant; 
 }

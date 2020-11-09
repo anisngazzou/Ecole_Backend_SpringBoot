@@ -6,6 +6,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
+import javax.persistence.ManyToOne;
 
 import org.springframework.lang.Nullable;
 
@@ -23,4 +24,8 @@ public class AbsenceEtudiant implements Serializable {
 	private String type ;
 	@Nullable @Column(length = 500)
 	private String commentaire ;
+	@ManyToOne 
+    private Etudiant etudiant ; 
+	@ManyToOne 
+    private Matiere matiere ; 
 }
