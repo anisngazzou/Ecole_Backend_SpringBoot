@@ -1,7 +1,9 @@
 package org.poly.entities;
 
 import java.io.Serializable;
-
+import java.util.List;
+import javax.persistence.DiscriminatorValue;
+import javax.persistence.OneToMany;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -11,7 +13,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 @Entity @Data @AllArgsConstructor @NoArgsConstructor
-public class Enseignant {
+@DiscriminatorValue("En")
+public class Enseignant extends User implements Serializable {
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long Id;
 	private String nom ;
@@ -25,7 +28,13 @@ public class Enseignant {
 	private Long cin; 
 	private String photo ;
 	private String numTel ; 
+	@OneToMany(mappedBy = "enseignant")
+	private List<AffectationEnseigMatiere> affectations;
 	
 	
+
+
+
+
 
 }

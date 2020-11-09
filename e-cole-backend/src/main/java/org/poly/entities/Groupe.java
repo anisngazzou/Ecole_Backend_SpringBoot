@@ -9,7 +9,12 @@ import org.springframework.lang.Nullable;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import java.util.List;
+
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 @Entity @Data @AllArgsConstructor @NoArgsConstructor  
+
 
 public class Groupe {
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -17,4 +22,15 @@ public class Groupe {
 	private String nomGroupe ;
 	@Column(length = 500) @Nullable
 	private String commentaires ;
+	@OneToMany(mappedBy = "groupe")
+	private List<AffectaionEtudGroupe> affectationsEtudiants ;
+	
+	@OneToMany(mappedBy = "groupe")
+	private List<AffectationEnseigMatiere> affectationsEnseignants;
+	
+	@ManyToOne
+	private Section section ;
 	}
+
+
+

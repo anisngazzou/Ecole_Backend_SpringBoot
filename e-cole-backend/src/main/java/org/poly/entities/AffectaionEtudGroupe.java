@@ -12,12 +12,21 @@ import org.springframework.lang.Nullable;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import javax.persistence.ManyToOne;
 
 @Entity @Data @AllArgsConstructor @NoArgsConstructor
 
+
 public class AffectaionEtudGroupe {
+
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long Id ;
 	@Column(length = 500) @Nullable
 	private String commentaire;
+	private String anneeUniversitaire;
+	@ManyToOne
+	private Etudiant etudiant ;
+	@ManyToOne
+	private Groupe groupe;
+
 }

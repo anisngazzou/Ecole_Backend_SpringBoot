@@ -13,13 +13,21 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Entity @Data @AllArgsConstructor @NoArgsConstructor
 
+
+import java.util.List;
+
+import javax.persistence.OneToMany;
+@Entity @Data @AllArgsConstructor @NoArgsConstructor
 public class Specialite {
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long Id ;
 	private String nomSpecialite ;
 
+
 	@Column(length = 500) @Nullable
 	private String commentaires ;
+	@OneToMany(mappedBy = "specialite")
+	private List<Section> sections;
+
 }
