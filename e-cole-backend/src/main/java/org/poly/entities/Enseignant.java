@@ -30,6 +30,8 @@ public class Enseignant extends User implements Serializable {
 	private String numTel ; 
 	@OneToMany(mappedBy = "enseignant")
 	private List<AffectationEnseigMatiere> affectations;
+	@OneToMany(mappedBy = "enseignant")
+	private List<EmploisDuTemps> emploisdutemps;
 	
 	
 
