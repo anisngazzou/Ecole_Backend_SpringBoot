@@ -14,10 +14,10 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Entity @Data @AllArgsConstructor @NoArgsConstructor @DiscriminatorValue("Et")
+@Entity @Data @AllArgsConstructor @NoArgsConstructor
+@DiscriminatorValue("Et")
 public class Etudiant extends User implements Serializable  {
-	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long Id;
+	
 	private String matricule;
 	private String nom ;
 	private String prenom ;

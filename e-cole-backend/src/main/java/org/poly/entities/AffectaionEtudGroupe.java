@@ -15,9 +15,7 @@ import lombok.NoArgsConstructor;
 import javax.persistence.ManyToOne;
 
 @Entity @Data @AllArgsConstructor @NoArgsConstructor
-
-
-public class AffectaionEtudGroupe {
+public class AffectaionEtudGroupe implements Serializable {
 
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long Id ;

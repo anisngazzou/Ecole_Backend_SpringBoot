@@ -16,7 +16,7 @@ import java.util.List;
 import javax.persistence.OneToMany;
 
 @Entity @Data @AllArgsConstructor @NoArgsConstructor
-public class Role {
+public class Role implements Serializable {
 
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long Id;

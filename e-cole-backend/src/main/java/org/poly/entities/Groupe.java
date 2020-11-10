@@ -14,9 +14,7 @@ import java.util.List;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 @Entity @Data @AllArgsConstructor @NoArgsConstructor  
-
-
-public class Groupe {
+public class Groupe implements Serializable {
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long Id ;
 	private String nomGroupe ;

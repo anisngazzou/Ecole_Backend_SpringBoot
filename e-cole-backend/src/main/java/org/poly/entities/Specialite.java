@@ -19,7 +19,7 @@ import java.util.List;
 
 import javax.persistence.OneToMany;
 @Entity @Data @AllArgsConstructor @NoArgsConstructor
-public class Specialite {
+public class Specialite implements Serializable {
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long Id ;
 	private String nomSpecialite ;

@@ -16,7 +16,7 @@ import java.util.List;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 @Entity @Data @AllArgsConstructor @NoArgsConstructor
-public class Section {
+public class Section implements Serializable {
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long Id ;
 	private String nomSection ;

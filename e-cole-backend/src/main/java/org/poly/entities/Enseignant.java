@@ -15,8 +15,7 @@ import lombok.NoArgsConstructor;
 @Entity @Data @AllArgsConstructor @NoArgsConstructor
 @DiscriminatorValue("En")
 public class Enseignant extends User implements Serializable {
-	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long Id;
+	
 	private String nom ;
 	private String prenom ;
 	private String dateDeNaissance ;

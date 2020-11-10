@@ -14,12 +14,13 @@ import javax.persistence.DiscriminatorColumn;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
 @Inheritance(strategy=InheritanceType.JOINED)
 @DiscriminatorColumn(name="user_type")
 @Entity @Data @AllArgsConstructor @NoArgsConstructor
-
-public class User {
+@Table(name = "utilisateur")
+public class User implements Serializable {
 
 @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 private Long Id;
