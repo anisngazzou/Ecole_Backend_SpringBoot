@@ -1,6 +1,10 @@
 package org.poly.entities;
 import java.io.Serializable;
+import java.util.HashSet;
+import java.util.Set;
+
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -13,6 +17,9 @@ import lombok.NoArgsConstructor;
 import javax.persistence.DiscriminatorColumn;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
@@ -26,6 +33,15 @@ public class User implements Serializable {
 private Long Id;
 private String username;
 private String password;
- @ManyToOne
-private Role role ;
+@ManyToMany(fetch = FetchType.LAZY)
+@JoinTable(	name = "user_roles", 
+			joinColumns = @JoinColumn(name = "user_id"), 
+			inverseJoinColumns = @JoinColumn(name = "role_id"))
+private Set<Role> roles = new HashSet<>();
+public User(String username, String password) {
+	super();
+	this.username = username;
+	this.password = password;
+}
+
 }

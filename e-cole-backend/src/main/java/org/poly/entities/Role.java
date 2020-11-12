@@ -1,6 +1,10 @@
 package org.poly.entities;
 import java.io.Serializable;
+
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -20,8 +24,9 @@ public class Role implements Serializable {
 
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long Id;
-	private String nomRole;
-	@OneToMany(mappedBy = "role")
-	private List<User> users;
+	@Enumerated(EnumType.STRING)
+	@Column(length = 20)
+	private ERole name;
+	
 
 }

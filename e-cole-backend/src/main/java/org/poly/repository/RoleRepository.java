@@ -1,5 +1,8 @@
 package org.poly.repository;
 
+import java.util.Optional;
+
+import org.poly.entities.ERole;
 import org.poly.entities.Role;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
@@ -9,4 +12,5 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 @CrossOrigin("*")
 public interface RoleRepository extends JpaRepository<Role, Long> {
 
+	Role findByName(ERole name);
 }
