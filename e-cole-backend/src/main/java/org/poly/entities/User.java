@@ -24,8 +24,8 @@ public class User implements Serializable {
 
 @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 private Long Id;
-private String nomUtilisateur;
-private String mdp;
+private String username;
+private String password;
  @ManyToOne
 private Role role ;
 }
