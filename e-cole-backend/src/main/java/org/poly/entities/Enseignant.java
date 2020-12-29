@@ -11,9 +11,11 @@ import javax.persistence.Id;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+
 import lombok.NoArgsConstructor;
-@Entity @Data @AllArgsConstructor @NoArgsConstructor
+
 @DiscriminatorValue("En")
+@AllArgsConstructor @NoArgsConstructor @Data @Entity
 public class Enseignant extends User implements Serializable {
 	
 	private String nom ;
