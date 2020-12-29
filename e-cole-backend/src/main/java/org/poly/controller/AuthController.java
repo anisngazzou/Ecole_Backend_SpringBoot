@@ -70,6 +70,7 @@ public class AuthController {
 				.collect(Collectors.toList());
 
 		return ResponseEntity.ok(new JwtResponse(jwt, 
+												 userDetails.getId(), 
 												 userDetails.getUsername(), 
 												 roles));
 	}
@@ -99,7 +100,7 @@ public class AuthController {
 		    			
 		    			break;
 		    		case "etudiant":
-		            	Role pmRole = roleRepository.findByName(ERole.ROLE_ETUDIANT)
+		            	Role etudiantRole = roleRepository.findByName(ERole.ROLE_ETUDIANT)
 		                .orElseThrow(() -> new RuntimeException("Fail! -> Cause: User Role not find."));
 		            	roles.add(pmRole);
 		            	
@@ -110,8 +111,9 @@ public class AuthController {
 		        		roles.add(userRole);        			
 	        	}
 	        });**/
-	        Role pmRole = roleRepository.findByName(ERole.ROLE_ADMIN);
-	        roles.add(pmRole);
+	       
+	        Role adminRole = roleRepository.findByName(ERole.ROLE_ADMIN) ;
+			roles.add(adminRole);
 	        user.setRoles(roles);
 	        userRepository.save(user);
 

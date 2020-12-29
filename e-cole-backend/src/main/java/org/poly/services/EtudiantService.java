@@ -26,6 +26,7 @@ public class EtudiantService {
 		 Set<Role> roles = new HashSet<>();
 		String password = etudiant.getPassword();
 		etudiant.setPassword(encoder.encode(password));
+
 		Role pmRole = roleRepository.findByName(ERole.ROLE_ETUDIANT);
         roles.add(pmRole);
         etudiant.setRoles(roles);
