@@ -2,23 +2,20 @@ package org.poly.entities;
 
 import java.io.Serializable;
 import java.util.List;
-
 import javax.persistence.DiscriminatorValue;
+import javax.persistence.OneToMany;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
 @Entity @Data @AllArgsConstructor @NoArgsConstructor
-@DiscriminatorValue("Et")
-public class Etudiant extends User implements Serializable  {
+@DiscriminatorValue("En")
+public class Enseignant extends User implements Serializable {
 	
-	private String matricule;
 	private String nom ;
 	private String prenom ;
 	private String dateDeNaissance ;
@@ -30,13 +27,15 @@ public class Etudiant extends User implements Serializable  {
 	private Long cin; 
 	private String photo ;
 	private String numTel ; 
-	
-	@OneToMany(mappedBy = "etudiant")
-	private List<AffectaionEtudGroupe> affectations;
-	@OneToMany(mappedBy = "etudiant") 
-    private List<Note> note; 
-	@OneToMany(mappedBy = "etudiant") 
-	private List<AbsenceEtudiant> absenceetudiant; 
+	@OneToMany(mappedBy = "enseignant")
+	private List<AffectationEnseigMatiere> affectations;
+	@OneToMany(mappedBy = "enseignant")
+	private List<EmploisDuTemps> emploisdutemps;
 	
 	
+
+
+
+
+
 }
