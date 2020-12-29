@@ -19,7 +19,7 @@ public class AbsenceEtudiant implements Serializable {
 
 	@javax.persistence.Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long Id ;
-	private String dateAbsence ;
+	private String dateAbsence  ;
 	private Boolean justifiée ;
 	private String type ;
 	@Nullable @Column(length = 500)

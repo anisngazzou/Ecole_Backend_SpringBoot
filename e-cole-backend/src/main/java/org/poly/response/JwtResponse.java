@@ -3,24 +3,34 @@ package org.poly.response;
 import java.util.List;
 
 public class JwtResponse {
-    private String token;
+    private Long id;
+	private String token;
     private String username;
     private List<String> authorities;
     private String type = "Bearer";
 
-    public JwtResponse(String accessToken, String username, List<String> role) {
-        this.token = accessToken;
+    public JwtResponse(String accessToken,Long id , String username, List<String> role) {
+        this.id = id;
+    	this.token = accessToken;
         this.username=username;
         this.authorities=role;
+        
     }
 
     public String getUsername() {
         return username;
     }
-
+    public Long getId() {
+        return id;
+    }
+	public void setId(Long id) {
+		this.id = id;
+	}
     public void setUsername(String username) {
         this.username = username;
     }
+  
+
 
 
     public List<String> getAuthorities() {
